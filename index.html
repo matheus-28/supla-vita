@@ -1,29 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Supla Vita Suplementos</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loja de Suplementos</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
-    <h1>Supla Vita Suplementos</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="produtos.html">Produtos</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+    <div class="container">
+      <h1>Suplementos Power</h1>
+      <nav>
+        <ul>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h2>Bem-vindo à Supla Vita!</h2>
-    <p>Descubra os melhores suplementos para seu corpo e sua saúde.</p>
-    <img src="https://via.placeholder.com/700x300?text=Suplementos+de+Qualidade" alt="Banner Suplementos">
-  </main>
+  <section class="hero">
+    <div class="container">
+      <h2>Os melhores suplementos para você alcançar seus objetivos</h2>
+      <p>Qualidade e preço justo em um só lugar!</p>
+    </div>
+  </section>
+
+  <section id="produtos" class="produtos container">
+    <h2>Nossos Produtos</h2>
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://i.imgur.com/OcXbL4t.jpg" alt="Whey Protein" />
+        <h3>Whey Protein</h3>
+        <p>Proteína isolada para recuperação muscular rápida.</p>
+        <span>R$120,00</span>
+        <button onclick="adicionarCarrinho('Whey Protein', 120)">Comprar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/g9MwVbc.jpg" alt="Creatina" />
+        <h3>Creatina</h3>
+        <p>Aumente sua força e desempenho nos treinos.</p>
+        <span>R$80,00</span>
+        <button onclick="adicionarCarrinho('Creatina', 80)">Comprar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/Y51sEJG.jpg" alt="BCAA" />
+        <h3>BCAA</h3>
+        <p>Recuperação muscular e redução da fadiga.</p>
+        <span>R$70,00</span>
+        <button onclick="adicionarCarrinho('BCAA', 70)">Comprar</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="carrinho" class="carrinho container">
+    <h2>Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+    <p id="total">Total: R$0,00</p>
+    <button onclick="finalizarCompra()" class="finalizar-btn">Finalizar Compra</button>
+  </section>
+
+  <section id="sobre" class="sobre container">
+    <h2>Sobre a Loja</h2>
+    <p>Somos especialistas em suplementos com foco em qualidade e preços acessíveis. Nosso objetivo é ajudar você a alcançar seus objetivos de forma saudável.</p>
+  </section>
+
+  <section id="contato" class="contato container">
+    <h2>Contato</h2>
+    <form onsubmit="return enviarFormulario()">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Supla Vita Suplementos</p>
+    <p>© 2025 Suplementos Power - Todos os direitos reservados.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
